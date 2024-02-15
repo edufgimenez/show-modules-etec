@@ -9,6 +9,7 @@
 // @exclude      https://eadtec.cps.sp.gov.br/atividades*
 // @exclude      https://eadtec.cps.sp.gov.br/bate_papo*
 // @exclude      https://eadtec.cps.sp.gov.br/mostraaula.php
+// @exclude      https://eadtec.cps.sp.gov.br/midiateca/arquivos/*
 // @grant        none
 // ==/UserScript==
 
