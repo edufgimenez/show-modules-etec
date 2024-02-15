@@ -4,7 +4,7 @@
 // @version      1.0
 // @description  Cria acesso rápido via links para todos os módulos e agendas do curso de Desenvolvimento de Sistemas ( Módulos 1,2 e 3)
 // @author       Eduardo Gimenez
-// @contributor  Valdir Amaral (Designer UI)
+// @contributor  Valdir Amaral (Front-End)
 // @match        https://eadtec.cps.sp.gov.br/*
 // @exclude      https://eadtec.cps.sp.gov.br/index.php*
 // @exclude      https://eadtec.cps.sp.gov.br/atividades*
