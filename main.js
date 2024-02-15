@@ -11,6 +11,7 @@
 // @exclude      https://eadtec.cps.sp.gov.br/mostraaula.php
 // @exclude      https://eadtec.cps.sp.gov.br/midiateca/arquivos/*
 // @grant        none
+
 // ==/UserScript==
 
 (function() {
@@ -21,9 +22,9 @@
         const link = document.createElement('a');
         link.href = url;
         link.textContent = text;
-        link.style.fontSize = '12px';
-        link.style.color = 'blue';
-        link.style.borderBottom = '1px solid black';
+        Object.assign(link.style, linkStyles);
+        link.setAttribute('target', '_blank');
+
         return link;
     }
 
@@ -37,15 +38,15 @@
 
         const titleElement = document.createElement('h1');
         titleElement.textContent = title;
-        titleElement.style.marginBottom = '10px';
-        titleElement.style.color = 'green';
-        //titleElement.style.fontSize = '10px';
+
         moduleDiv.appendChild(titleElement);
+
+        Object.assign(moduleDiv.style, moduleStyles);
+        Object.assign(titleElement.style, titleModStyles);
 
         agendas.forEach(agenda => {
             const link = createLink(agenda.text, agenda.url);
             moduleDiv.appendChild(link);
-            moduleDiv.appendChild(document.createElement('br')); // Adicionando quebra de linha entre os links
         });
 
         return moduleDiv;
@@ -207,29 +208,12 @@
         // Cria o elemento para os modulos do primeiro semestre
         const module1Container = document.createElement('div');
         module1Container.className = 'module-container';
-        module1Container.style.position = 'absolute';
-        module1Container.style.top = '20px';
-        module1Container.style.right = '20px';
-        module1Container.style.display = 'grid';
-        module1Container.style.gridTemplateColumns = 'repeat(3, 1fr)';
-        module1Container.style.gap = '14px';
-        // Cria o elemento para os modulos do segundo e terceiro semestre ( foi necessário separar pois o container muda para 4x4 e não mais 3x3)
-        const otherModulesContainer = document.createElement('div');
-        otherModulesContainer.className = 'module-container';
-        otherModulesContainer.style.position = 'absolute';
-        otherModulesContainer.style.top = '340px'; // O top tem que ser distante para não ficar em cima do modulo 1
-        otherModulesContainer.style.right = '20px';
-        otherModulesContainer.style.display = 'grid';
-        otherModulesContainer.style.gridTemplateColumns = 'repeat(3, 1fr)';
-        otherModulesContainer.style.gap = '4px';
+
+        Object.assign(module1Container.style, containerStyles);
 
         Object.entries(modulesData).forEach(([title, links]) => {
             const module = addModule(title, links);
-            if (title.includes('Modulo 1')) {
-                module1Container.appendChild(module);
-            } else {
-                otherModulesContainer.appendChild(module);
-            }
+            module1Container.appendChild(module);
         });
 
         // Adicionando os contêineres à página
@@ -241,3 +225,30 @@
     window.addEventListener('load', addModules);
 
 })();
+
+
+// Estilos para os elementos
+const moduleStyles = {
+    backgroundColor: 'white',
+    padding: '12px'
+};
+const containerStyles = {
+    display: 'grid',
+    maxWidth: '1200px',
+    margin: '120px auto',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '14px'
+}
+const linkStyles = {
+    textDecoration: 'none',
+    color: '#333',
+    marginBottom: '12px',
+    fontSize: '16px',
+    textAlign: 'left',
+    display: 'block'
+}
+const titleModStyles = {
+    marginBottom: '10px',
+    fontSize: '18px',
+    color: 'green',
+}
