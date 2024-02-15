@@ -11,6 +11,7 @@
 // @exclude      https://eadtec.cps.sp.gov.br/bate_papo*
 // @exclude      https://eadtec.cps.sp.gov.br/mostraaula.php
 // @exclude      https://eadtec.cps.sp.gov.br/midiateca/arquivos/*
+// @exclude      https://eadtec.cps.sp.gov.br/popup_aviso_mostra.php*
 // @grant        none
 
 // ==/UserScript==
