@@ -24,3 +24,5 @@ Após colar o script, salve as alterações e ative o script no Tampermonkey.
 Este script cria links diretos para todos os módulos e agendas do curso de Desenvolvimento de Sistemas na plataforma EADTEC.
 Os links são organizados por módulos e exibidos de forma clara e acessível na página.
 Basta clicar nos links para acessar diretamente os módulos e agendas desejados.
+<br><br>
+![Exemplo das agendas](https://raw.githubusercontent.com/edufgimenez/show-modules-etec/main/agendas.jpg)
