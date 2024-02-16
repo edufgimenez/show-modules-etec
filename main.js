@@ -19,14 +19,51 @@
 (function() {
     'use strict';
 
+    document.querySelector('*').style.scrollBehavior = 'smooth';
+
+    // Estilos para os elementos
+    const moduleStyles = {
+        backgroundColor: 'white',
+        padding: '12px',
+        marginBottom: '20px',
+        boxShadow: '0 0 10px #1e1e1e',
+        borderRadius: '8px'
+    };
+    const containerStyles = {
+        display: 'grid',
+        maxWidth: '1200px',
+        margin: '120px auto',
+        gridTemplateColumns: 'repeat(3, 1fr)',
+        gap: '14px'
+    }
+    const linkStyles = {
+        textDecoration: 'none',
+        color: '#333',
+        marginBottom: '12px',
+        fontSize: '16px',
+        textAlign: 'left',
+        display: 'block'
+    }
+    const scrollBtnStyles = {
+        backgroundColor: '#B31826',
+        textAlign: 'center',
+        color: 'white',
+        fontSize: '18px',
+        borderRadius: '12px',
+        padding: '8px 12px',
+    }
+    const titleModStyles = {
+        marginBottom: '10px',
+        fontSize: '18px',
+        color: 'green',
+    }
+
     // Função para criar um elemento de link
     function createLink(text, url) {
         const link = document.createElement('a');
         link.href = url;
         link.textContent = text;
         Object.assign(link.style, linkStyles);
-        link.setAttribute('target', '_blank');
-
         return link;
     }
 
@@ -34,9 +71,6 @@
     function addModule(title, agendas) {
         const moduleDiv = document.createElement('div');
         moduleDiv.className = 'module'; // Adicionando classe CSS para estilização
-        moduleDiv.style.padding = '2px';
-        moduleDiv.style.marginBottom = '20px';
-        moduleDiv.style.border = '1px solid black';
 
         const titleElement = document.createElement('h1');
         titleElement.textContent = title;
@@ -54,6 +88,10 @@
         return moduleDiv;
     }
 
+    // Função que cria botão para exibir módulos
+    function createCollapse(title) {
+        document
+    }
     // Função principal para adicionar os módulos na página
     function addModules() {
         const modulesData = {
@@ -209,7 +247,7 @@
         };
         // Cria o elemento para os modulos do primeiro semestre
         const module1Container = document.createElement('div');
-        module1Container.className = 'module-container';
+        module1Container.id = 'module-container';
 
         Object.assign(module1Container.style, containerStyles);
 
@@ -220,37 +258,18 @@
 
         // Adicionando os contêineres à página
         document.body.appendChild(module1Container);
-        // document.body.appendChild(otherModulesContainer);
     }
+
+    // Criar botão para scrollar até os módulos
+    const mainTable = document.querySelector('table');
+    const scrollBtn = createLink('Ver módulos', '#module-container');
+    Object.assign(scrollBtn.style, scrollBtnStyles);
+    console.log(scrollBtn)
+    mainTable.insertBefore(scrollBtn, mainTable.firstChild);
 
     // Adicionar os módulos quando a página estiver carregada
     window.addEventListener('load', addModules);
-
+    
 })();
 
 
-// Estilos para os elementos
-const moduleStyles = {
-    backgroundColor: 'white',
-    padding: '12px'
-};
-const containerStyles = {
-    display: 'grid',
-    maxWidth: '1200px',
-    margin: '120px auto',
-    gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '14px'
-}
-const linkStyles = {
-    textDecoration: 'none',
-    color: '#333',
-    marginBottom: '12px',
-    fontSize: '16px',
-    textAlign: 'left',
-    display: 'block'
-}
-const titleModStyles = {
-    marginBottom: '10px',
-    fontSize: '18px',
-    color: 'green',
-}
