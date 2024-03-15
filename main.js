@@ -95,6 +95,15 @@
     // Função principal para adicionar os módulos na página
     function addModules() {
         const modulesData = {
+            'Módulo 1 SIMULADO': [
+            {text: 'Prova-Simulado: Orientações Exame', url: 'https://eadtec.cps.sp.gov.br/cenario.php?id_aula=1442'}
+            ],
+            'Módulo 2 SIMULADO': [
+            {text: 'Prova-Simulado: Orientações Exame', url: 'https://eadtec.cps.sp.gov.br/cenario.php?id_aula=1443'}
+            ],
+            'Módulo 3 SIMULADO': [
+            {text: 'Prova-Simulado: Orientações Exame', url: 'https://eadtec.cps.sp.gov.br/cenario.php?id_aula=1444'}
+            ],
             'Modulo 1 DS': [
                 { text: '1 Raciocinando a Lógica', url: 'https://eadtec.cps.sp.gov.br/cenario.php?id_aula=796' },
                 { text: '2 Desenvolvendo a Lógica', url: 'https://eadtec.cps.sp.gov.br/cenario.php?id_aula=797' },
@@ -269,7 +278,6 @@
 
     // Adicionar os módulos quando a página estiver carregada
     window.addEventListener('load', addModules);
-    
-})();
 
+})();
 
