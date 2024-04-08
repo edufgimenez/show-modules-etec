@@ -12,6 +12,7 @@
 // @exclude      https://eadtec.cps.sp.gov.br/mostraaula.php
 // @exclude      https://eadtec.cps.sp.gov.br/midiateca/arquivos/*
 // @exclude      https://eadtec.cps.sp.gov.br/popup_aviso_mostra.php*
+// @run-at       document-start
 // @grant        none
 
 // ==/UserScript==
