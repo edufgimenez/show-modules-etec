@@ -1,4 +1,4 @@
-# Script de Acesso Rápido a Módulos e Agendas do EADTEC
+# Script de Acesso Rápido a Módulos e Agendas do EADTEC (2023 / 2024)
 
 ### Este é um script de usuário criado para o Tampermonkey que oferece acesso rápido a todos os módulos e agendas do curso de Desenvolvimento de Sistemas no ambiente virtual EADTEC.
 
