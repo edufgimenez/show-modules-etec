@@ -20,8 +20,6 @@
 (function() {
     'use strict';
 
-    document.querySelector('*').style.scrollBehavior = 'smooth';
-
     // Estilos para os elementos
     const moduleStyles = {
         backgroundColor: 'white',
@@ -33,7 +31,7 @@
     const containerStyles = {
         display: 'grid',
         maxWidth: '1200px',
-        margin: '120px auto',
+        margin: '16px auto',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '14px'
     }
@@ -44,14 +42,6 @@
         fontSize: '16px',
         textAlign: 'left',
         display: 'block'
-    }
-    const scrollBtnStyles = {
-        backgroundColor: '#B31826',
-        textAlign: 'center',
-        color: 'white',
-        fontSize: '18px',
-        borderRadius: '12px',
-        padding: '8px 12px',
     }
     const titleModStyles = {
         marginBottom: '10px',
@@ -272,13 +262,8 @@
 
     // Criar botão para scrollar até os módulos
     const mainTable = document.querySelector('table');
-    const scrollBtn = createLink('Ver módulos', '#module-container');
-    Object.assign(scrollBtn.style, scrollBtnStyles);
-    console.log(scrollBtn)
-    mainTable.insertBefore(scrollBtn, mainTable.firstChild);
 
     // Adicionar os módulos quando a página estiver carregada
     window.addEventListener('load', addModules);
 
 })();
-
